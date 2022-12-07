@@ -1,0 +1,98 @@
+{% load static %}
+<!-- <!DOCTYPE html>
+<html>
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+<body>
+
+    
+     <form method="get" action="/search" >
+    <div class="main-search-input-wrap">
+       
+     
+        <div class="main-search-input fl-wrap">
+                                            <div class="main-search-input-item">
+                                                <input name ="query" type="text"  value="" placeholder="Search Anything..."  id="query">
+                                            </div>
+                                            
+                                            <button class="main-search-button">Search</button>
+                                            
+                                        </div>
+                                    </form>
+                                 
+                                        
+                                        
+        
+                                         {% comment %} <form method="get" action="/search" >
+                                            <div class="input-group mb-3">
+                                    
+                                                <input type="text" name="query"class='form-control form-control-lg' placeholder="Search"/>
+                                                <button class="btn-btn-dark btn-lg" type="submit" id="button-addon2">Button</button>
+                                            </div >
+                                        </div>
+  
+                                    </form> {% endcomment %}
+                                    {% block body %} {% endblock body %}
+                                    <div class="container">
+                                    {% block content %} {% endblock content %}
+                                    </div>
+                                    {% block article %}{% endblock article %}
+                                    {% block Posts %}{% endblock Posts %}
+                                </body>
+
+
+</html> -->
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+<head>
+	<title> Main </title>
+	<link rel="stylesheet" href="{% static "style.css" %}">
+</head>
+<body>
+	<div class="container">
+		<div class="search-bar">
+			<div id ="select">
+				<p id="selectText"> All categories</p>
+				<img src="">
+				<ul id="list">
+					<li class="options">Web Of Science</li>
+					<li class="options">PubMed</li>
+					<li class="options">Scopus</li>
+				</ul>
+			</div>
+            <form method="get" action="/search" >
+                
+                    
+                    <input name ="query" type="text"  value="" placeholder="Search Anything..."  id="query">
+                        
+                                                        
+                    
+                        </div>
+			
+		</div>
+	</div>
+
+
+<script>
+	let select = document.getElementById("select");
+	let list=document.getElementById("list");
+	let selectText=document.getElementById("selectText");
+	let inputfield=document.getElementById("inputfield");
+	let options=document.getElementsByClassName("options");
+	select.onclick=function(){
+		list.classList.toggle("open");
+	}
+
+
+for(option of options){
+	option.onclick=function(){
+		selectText.innerHTML=this.innerHTML;
+		inputfield.placeholder="Search In"+selectText.innerHTML;
+
+	}
+}
+
+</script>
+</body>
+</html>
